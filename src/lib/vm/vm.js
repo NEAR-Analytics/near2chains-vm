@@ -28,6 +28,10 @@ import BN from "bn.js";
 import * as nacl from "tweetnacl";
 import SecureIframe from "../components/SecureIframe";
 
+import { BarEl } from "../components/graphs/BarEl";
+
+
+
 const frozenNacl = Object.freeze({
   randomBytes: deepFreeze(nacl.randomBytes),
   secretbox: deepFreeze(nacl.secretbox),
@@ -142,6 +146,8 @@ const ApprovedTagsCustom = {
   OverlayTrigger: true,
   Files: true,
   iframe: false,
+  BarEl: true,
+
 };
 
 const ApprovedTags = {
@@ -486,6 +492,8 @@ class VmStack {
       return <Markdown {...attributes} />;
     } else if (element === "Fragment") {
       return <React.Fragment {...attributes}>{children}</React.Fragment>;
+    }  else if (element === "BarEl") {
+      return <BarEl {...attributes} />;
     } else if (element === "IpfsImageUpload") {
       return (
         <div className="d-inline-block" key={attributes.key}>
