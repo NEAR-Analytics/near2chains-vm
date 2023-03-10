@@ -14,7 +14,7 @@ const AccountSafetyMargin = OneNear.div(2);
 
 export const Loading = (
   <span
-    className="spinner-grow spinner-grow-sm me-1"
+    className="spinner-border spinner-border-sm text-info me-1"
     role="status"
     aria-hidden="true"
   />
